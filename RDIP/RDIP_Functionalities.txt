@@ -1,0 +1,8 @@
+The Functionalities present in the experiment are:
+->Containing a drop-down menu displaying the languages that are avaliable.
+->When the words are selected,then there is a "re-form the sentence".It gets activated.
+->Once after clicking the "re-form the sentence" button,then the words come backs as a jumbled one again and you can select them again.
+->If you assume that all the words that are selected by you was correct,then you can select "Check the correctness of this sentence" button.
+->Then after the answers submitted by you wrong then a button says that "get correct answer" activated.
+->After clicking "get correct answer" button ,you will get the correct answers displayed on the screen.
+->Apart from these,the answer that was submitted by you was wrong then there should be a corect answer button to know the right answer.
