@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<style>
+#experiment h4
+{
+padding-left:60px;
+padding-top: 44px;
+padding-bottom: 10px
+}
+
+#experiment p
+{
+   font-size:16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+     line-height: 0.3;
+     color:#00009C;
+     font-weight: bolder;
+}
+#experiment select
+{
+ font-size:15px;
+}
+.h2
+{
+ text-align: left;
+  font-size: 60px;
+  font-family: serif;
+  background-color: #CCEEEE;
+  height: 1000px;
+  padding-left:5px;
+}
+.h2 p
+{
+  padding-left:25px;
+  padding-top:5px;
+}
+.navbar2 ul 
+{
+  list-style: none;
+}
+.navbar2 li
+{
+  display: inline;
+}
+.navbar2 a
+{
+padding:14px 16px;
+font-size: 15px;
+color: #00688B   ;
+text-decoration: underline;
+}
+.navbar2
+{
+    font-family: sans-serif;
+    background-color: white;
+    height:900px;
+    margin:30px;  
+}
+ body
+  {
+    max-width:1030px;
+    max-height:1000px;
+    margin:auto;
+    background-color:#1D3559;
+ }
+</style>
+<script src="corpus.js"></script>
+</head>
+<body>
+<center>
+<section class="h2">
+      <p>Forming Sentences-2</p>
+        <div class="navbar2">
+  <section id="experiment">
+    <h4>Experiment</h4>
+    <center>
+      <select onchange="language()">
+         <option value="none" selected>---Select Language---</option>
+      <option  id="English">English</option>
+   <option value="Hindi" id="Hindi">Hindi</option></select><br><br>
+   <p id="result"></p>
+   <p id="result1" style="color:blue; font-style:italic; font-weight:lighter;"></p>
+</center>
+</section>
+</center>
+</body>
+</html> 
