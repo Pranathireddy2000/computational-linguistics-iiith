@@ -2,11 +2,12 @@
 <html>
 <head>
 	<title>Index</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+  <script src="corpus.js"></script>
 <style>
 #experiment h4
 {
@@ -56,6 +57,13 @@ font-size: 15px;
 color: #00688B   ;
 text-decoration: underline;
 }
+.navbar2 a:hover
+{
+  color:white;
+  background: #104E8B   ;
+  text-decoration: underline;
+}
+
 .navbar2
 {
     font-family: sans-serif;
@@ -70,25 +78,39 @@ text-decoration: underline;
     margin:auto;
     background-color:#1D3559;
  }
+ #result1
+{
+  color:blue !important;
+  font-style:italic !important;
+  font-weight:lighter !important;
+  margin-bottom: 50px;
+}
+ button
+ {
+  width: 90px;
+  height: 30px;
+  margin: 2px;
+}
 </style>
-<script src="corpus.js"></script>
 </head>
-<body>
-<center>
-<section class="h2">
-      <p>Forming Sentences-2</p>
+  <body>
+  <center>
+   <section class="h2">
+        <p>Forming Sentences-2</p>
         <div class="navbar2">
   <section id="experiment">
     <h4>Experiment</h4>
     <center>
       <select onchange="language()">
          <option value="none" selected>---Select Language---</option>
-      <option  id="English">English</option>
-   <option value="Hindi" id="Hindi">Hindi</option></select><br><br>
+      <option  id="English" onchange="clear()">English</option>
+   <option value="Hindi" id="Hindi" onchange="clear()">Hindi</option></select><br><br>
    <p id="result"></p>
-   <p id="result1" style="color:blue; font-style:italic; font-weight:lighter;"></p>
-</center>
-</section>
+   <p id="result1"></p>
+   <p id="result2"></p>
+   <p id="result3"></p>
+ </center>
+ </section>
 </center>
 </body>
-</html> 
+</html>
