@@ -23,6 +23,9 @@ function language()
 { 
 
 	document.getElementById("result2").innerHTML=""
+	document.getElementById("result4").innerHTML=""
+	document.getElementById("result3").innerHTML=""
+	document.getElementById("b3").style.visibility="hidden";
 	count=0
 if(document.getElementById("English").selected)
 {
@@ -44,6 +47,20 @@ for(i=0;i<p;i++)
  let button = document.createElement("button");
   button.innerHTML = temp1[i]
   body.appendChild(button);
+  button.addEventListener ("click", function() {
+	document.getElementById("result3").innerHTML="Formed Sentence<span style='font-style:italic;color:blue;font-weight:lighter'>(after selecting words):</span>";
+    document.getElementById("result4").innerHTML+=this.innerHTML+"  ";
+    this.style.visibility="hidden";
+    count=count+1;
+    if (count==1) 
+     {
+     	document.getElementById("b3").style.visibility="visible";
+     }
+    if (count==p) 
+     {
+     	document.getElementById("b4").style.visibility="visible";
+     }
+});
 }
 }
 else if (document.getElementById("Hindi").selected) 
@@ -67,6 +84,20 @@ for(i=0;i<q;i++)
  let button = document.createElement("button");
   button.innerHTML = temp2[i]
   body.appendChild(button)
+  button.addEventListener ("click", function() {
+	document.getElementById("result3").innerHTML="Formed Sentence<span style='font-style:italic;color:blue;font-weight:lighter'>(after selecting words):</span>";
+    document.getElementById("result4").innerHTML+=this.innerHTML+"  ";
+    this.style.visibility="hidden";
+    count=count+1;
+    if (count==1) 
+     {
+     	document.getElementById("b3").style.visibility="visible";
+     }
+    if (count==q) 
+     {
+     	document.getElementById("b4").style.visibility="visible";
+     }
+});
 }
 }
 else
