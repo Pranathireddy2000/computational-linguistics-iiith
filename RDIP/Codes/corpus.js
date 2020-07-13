@@ -19,6 +19,19 @@ var sentence5=["बिल्लियों को मारकर कुत्�
 var sentence6=["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"]
 var sentence7=["एक बड़ी सी किताब वहाँ है	","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब"," है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]
 var hinsentences=["राम और श्याम बाजार गयें","राम सोया और श्याम भी","मैंने उसे बताया कि राम सो रहा है","राम खाकर सोया","बिल्लियों को मारकर कुत्ता सो गया"	,"एक लाल किताब वहाँ है","एक बड़ी सी किताब वहाँ है	"]
+function submit()
+
+{
+
+	for(i=0;i<temp1.length||i<temp2.length;i++)
+	{
+	  if(document.getElementById('button'+i).style.visibility=="hidden")
+	  	document.getElementById('button'+i).style.visibility="visible";
+	  document.getElementById("result3").innerHTML=""
+	  document.getElementById("result4").innerHTML=""
+	  document.getElementById('b3').style.visibility="hidden"
+}
+}
 function language()
 { 
 
@@ -34,29 +47,29 @@ if(document.getElementById("English").selected)
 	var a=engsentences[Math.floor(Math.random() * engsentences.length)];
 	let body = document.getElementsByTagName("p")[3];
 	temp1=a.split(" ");
-	var p=temp1.length;
-	for(i=0;i<p;i++)
+	for(i=0;i<temp1.length;i++)
 {
-	j=Math.floor(Math.random()*p)
+	j=Math.floor(Math.random()*temp1.length)
 	a=temp1[i];
 	temp1[i]=temp1[j]
 	temp1[j]=a;
 }
-for(i=0;i<p;i++)
+for(i=0;i<temp1.length;i++)
 {
  let button = document.createElement("button");
+  button.id='button'+i;
   button.innerHTML = temp1[i]
   body.appendChild(button);
   button.addEventListener ("click", function() {
 	document.getElementById("result3").innerHTML="Formed Sentence<span style='font-style:italic;color:blue;font-weight:lighter'>(after selecting words):</span>";
-    document.getElementById("result4").innerHTML+=this.innerHTML+"  ";
+    document.getElementById("result4").innerHTML+=this.innerHTML+" ";
     this.style.visibility="hidden";
     count=count+1;
-    if (count==1) 
+    if (count>0) 
      {
      	document.getElementById("b3").style.visibility="visible";
      }
-    if (count==p) 
+    if (count==temp1.length) 
      {
      	document.getElementById("b4").style.visibility="visible";
      }
@@ -65,35 +78,34 @@ for(i=0;i<p;i++)
 }
 else if (document.getElementById("Hindi").selected) 
 { 
-	document.getElementById("result2").innerHTML=""
 	document.getElementById("result").innerHTML="Form a sentence(Declarative or Interrogative or any other type) from the given words"
 	document.getElementById("result1").innerHTML="(select the buttons in proper order)";
 	var b=hinsentences[Math.floor(Math.random() * hinsentences.length)];
-	 temp2=b.split(" ");
-	 var q=temp2.length;
+	temp2=b.split(" ");
 	let body = document.getElementsByTagName("p")[3];
-	for(i=0;i<q;i++)
+	for(i=0;i<temp2.length;i++)
 {
-	j=Math.floor(Math.random()*q)
+	j=Math.floor(Math.random()*temp2.length)
 	b=temp2[i];
 	temp2[i]=temp2[j]
 	temp2[j]=b;
 }
-for(i=0;i<q;i++)
+for(i=0;i<temp2.length;i++)
 {
  let button = document.createElement("button");
+ button.id='button'+i
   button.innerHTML = temp2[i]
   body.appendChild(button)
   button.addEventListener ("click", function() {
 	document.getElementById("result3").innerHTML="Formed Sentence<span style='font-style:italic;color:blue;font-weight:lighter'>(after selecting words):</span>";
-    document.getElementById("result4").innerHTML+=this.innerHTML+"  ";
+    document.getElementById("result4").innerHTML+=this.innerHTML+" ";
     this.style.visibility="hidden";
     count=count+1;
-    if (count==1) 
+    if(count>0) 
      {
      	document.getElementById("b3").style.visibility="visible";
      }
-    if (count==q) 
+    if (count==temp2.length) 
      {
      	document.getElementById("b4").style.visibility="visible";
      }
@@ -107,6 +119,7 @@ else
 	document.getElementById("result2").innerHTML=""
 }
 }
+
 
 
 
