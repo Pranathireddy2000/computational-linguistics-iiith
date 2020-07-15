@@ -1,15 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Index</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content= "width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="corpus.js"></script>
 <style>
- #experiment h4
+button 
+{
+  width: 90px;
+  height: 30px;
+  margin: 2px;
+}
+ #b3
+{
+ width: 190px;
+ height: 25px;
+ font-size:15px;
+ margin: 15px;
+}
+#b4
+{
+ width: 290px;
+ height: 25px;
+ font-size:15px;
+ margin: 15px;
+}
+
+#experiment h4
 {
 padding-left:60px;
 padding-top: 44px;
@@ -28,16 +50,16 @@ padding-bottom: 10px
 {
   font-size:15px;  
  }
-.h2
+.h4
 {
   font-size: 60px;
-  font-family: serif;
+  font-family: italic;
   background-color:#CCEEEE;
   height: 1000px;
   text-align: left;
   padding-left:5px;
 }
-.h2 p
+.h4 p
 {
   padding-left:25px;
   padding-top:5px;
@@ -82,18 +104,19 @@ body
 #result
 {
    font-size:16px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: 
+	"Lucida Sans Unicode", "Lucida Grande", sans-serif;
      line-height: 0.1;
-     color:#00009C;
+     color:#0000FF;
      font-weight: bolder;
 
 }
  #result1
 {
    font-size:16px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: italic;
      line-height: 0.1;
-     color:#00009C;
+     color:#0000FF;
      font-weight: lighter;
 	 padding-bottom: 10px;
 
@@ -102,9 +125,9 @@ body
 #result2
 {
    font-size:16px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: italic;
      line-height: 0.1;
-     color:#00009C;
+     color:#0000FF;
      font-weight: bolder;
 	 padding-bottom: 10px;
 
@@ -112,9 +135,10 @@ body
 #result3
 {
    font-size:16px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: 
+	"Lucida Sans Unicode", "Lucida Grande", sans-serif;
      line-height: 0.1;
-     color:#00009C;
+     color:#0000FF;
      font-weight: bolder;
      padding-bottom: 10px;
 
@@ -122,55 +146,44 @@ body
 #result4
 {
    font-size:16px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: 
+	"Lucida Sans Unicode", "Lucida Grande", sans-serif;
      line-height: 0.1;
-     color:#00009C;
+     color:#0000FF;
      font-weight: bolder;
      padding-bottom: 10px;
 }
-button 
-{
-  width: 90px;
-  height: 30px;
-  margin: 2px;
-}
- #b3
-{
- width: 190px;
- height: 25px;
- font-size:15px;
- margin: 15px;
-}
-#b4
-{
- width: 290px;
- height: 25px;
- font-size:15px;
- margin: 15px;
-}
+
+
 </style>
 </head>
-  <body>
+<body>
   <center>
-        <section class="h2">
+        <section class="h4">
         <p>Forming Sentences-2</p>
         <div class="navbar2"> 
-  <section id="experiment">
-    <h4>Experiment</h4>
+        <section id="experiment">
+        <h4>Experiment</h4> 
     <center>
-      <select onchange="language()">
+	
+         <select onchange="language()">
          <option value="none" selected>---Select Language---</option>
-      <option  id="English" >English</option>
-   <option value="Hindi" id="Hindi" >Hindi</option></select><br><br>
+         <option  id="English" >English</option>
+         <option value="Hindi" id="Hindi" >Hindi</option>
+		 </select><br><br>
+		 
    <p id="result"></p>
    <p id="result1" style="color:blue; font-style: italic;font-weight:lighter;"></p>
    <p id="result2"></p>
    <p id="result3"></p>
-   <p id="result4" ></p>
-   <button id="b3" style="visibility: hidden" onclick="submit()">Re-form the sentence</button><br>
-   <button id="b4" style="visibility: hidden" >Check the correctness of this sentence</button>
+   <p id="result4"></p>
+   <p id="result5"></p>
+   
+   <button id="b3" style="visibility: hidden" onclick="reform()">Re-form the sentence</button><br>
+   <button id="b4" style="visibility: hidden" onclick="check()">Check the correctness of this sentence</button>
+   
  </center>
-  </section>
+      </section>
 </center>
 </body>
 </html>
