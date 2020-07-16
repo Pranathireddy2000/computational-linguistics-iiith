@@ -44,7 +44,7 @@ function language()
 	document.getElementById("result4").innerHTML=""
 	document.getElementById("result5").innerHTML=""
 	document.getElementById("b3").style.visibility="hidden";
-	document.getElementById("b4").style.visibility="hidden"
+	document.getElementById("b4").style.visibility="hidden";
 	
 	if(document.getElementById("English").selected){
 		langsentences = engsentences;
@@ -134,6 +134,7 @@ function check()
   if(break_flag==0){
 	   document.getElementById("result5").innerHTML=
 	   "<span style='color:red;font-size:30px'>Wrong answer!!!</span>"
+	   document.getElementById("b5").style.visibility="";
   }
 	  
   }
