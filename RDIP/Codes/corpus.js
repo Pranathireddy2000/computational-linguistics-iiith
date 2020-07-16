@@ -30,10 +30,15 @@ function reform()
 	{
 		document.getElementById('button'+i).style.visibility="visible";
 	}
-    document.getElementById('result3').innerHTML=""
-    document.getElementById('result4').innerHTML=""
-    document.getElementById("b3").style.visibility="hidden"
-    document.getElementById("b4").style.visibility="hidden"  
+    
+	document.getElementById("result3").innerHTML=""
+	document.getElementById("result4").innerHTML=""
+	document.getElementById("result5").innerHTML=""
+	document.getElementById("result6").innerHTML=""
+	document.getElementById("b5").innerHTML = "Get Correct Sentence"
+	document.getElementById("b3").style.visibility="hidden";
+	document.getElementById("b4").style.visibility="hidden";
+	document.getElementById("b5").style.visibility="hidden";
 }
 }
 function language()
@@ -43,14 +48,21 @@ function language()
 	document.getElementById("result3").innerHTML=""
 	document.getElementById("result4").innerHTML=""
 	document.getElementById("result5").innerHTML=""
+	document.getElementById("result6").innerHTML=""
+	document.getElementById("b5").innerHTML = "Get Correct Sentence"
 	document.getElementById("b3").style.visibility="hidden";
 	document.getElementById("b4").style.visibility="hidden";
+	document.getElementById("b5").style.visibility="hidden";
 	
 	if(document.getElementById("English").selected){
 		langsentences = engsentences;
+		c=10;
+		correct_sent=correct_sent1;
 	}
 	else if(document.getElementById("Hindi").selected){
 		langsentences = hinsentences;
+		c=7;
+		correct_sent=correct_sent2;
 	}
 	else{
 		document.getElementById("result").innerHTML=""
@@ -63,8 +75,11 @@ function language()
 	let body = document.getElementsByTagName("p")[3];
 	document.getElementById("result").innerHTML="Form a sentence(Declarative or Interrogative or any other type) from the given words";
 	document.getElementById("result1").innerHTML="(select the buttons in proper order)";
-	rand_sent=langsentences[Math.floor(Math.random() * langsentences.length)];
+	
+	rand_index= Math.floor(Math.random() * c);
+	rand_sent=correct_sent[rand_index][0];
     sent_array=rand_sent.split(" ");
+	
 	for(i=0;i<sent_array.length;i++)
     {
 	j=Math.floor(Math.random()*sent_array.length)
@@ -104,21 +119,18 @@ function check()
 {
 
   var str_given=String(document.getElementById("result4").innerHTML).replace(/\s+$/, '');
-  var arr;
-  var count;
-  var break_flag=0;
-  if(document.getElementById("English").selected) {
-	 arr=correct_sent1;
-	 count=10;
-  }
-  if(document.getElementById("Hindi").selected){
-		arr=correct_sent2;
-		count=7;
-  }
   
-  for(i=0;i<count;i++){
-	  for(j=0;j<arr[i].length;j++){
-		  if(str_given==arr[i][j]){
+  var break_flag=0;
+  
+  
+  for(i=0;i<c;i++){
+	  
+	document.getElementById("result6").innerHTML=""
+	document.getElementById("b5").innerHTML = "Get Correct Sentence"
+	
+	document.getElementById("b5").style.visibility="hidden";
+	  for(j=0;j<correct_sent[i].length;j++){
+		  if(str_given==correct_sent[i][j]){
 			  document.getElementById("result5").innerHTML=
 			  "<span style='color:green;font-size:30px'>Right answer!!!</span>"
 			  break_flag=1;
@@ -137,4 +149,39 @@ function check()
 	   document.getElementById("b5").style.visibility="";
   }
 	  
+  }
+  
+  function toggle(){
+	  var correct_answers="";
+	  
+	  if(document.getElementById("b5").innerHTML == "Get Correct Sentence"){
+		  
+		  for(i=0;i<c;i++){
+			  if(rand_sent == correct_sent[i][0]){
+				  for(j=0;j<correct_sent[i].length;j++){
+					correct_answers += correct_sent[i][j]+"<br>";
+				  }
+				  document.getElementById("result6").innerHTML=correct_answers;
+				  document.getElementById("b5").innerHTML="Hide the correct Sentence";
+				  break;
+				}
+			}
+		}
+	  else if(document.getElementById("b5").innerHTML == "Hide the correct Sentence"){
+		  document.getElementById("result6").innerHTML="";
+		  
+		  document.getElementById("b5").innerHTML="Get Answers";
+	  }
+	  else if(document.getElementById("b5").innerHTML == "Get Answers"){
+		  for(i=0;i<c;i++){
+			  if(rand_sent == correct_sent[i][0]){
+				  for(j=0;j<correct_sent[i].length;j++){
+					correct_answers += correct_sent[i][j]+"<br>";
+				  }
+				  document.getElementById("result6").innerHTML=correct_answers;
+				  document.getElementById("b5").innerHTML="Hide the correct Sentence";
+				  break;
+				}
+			}
+	  }
   }
