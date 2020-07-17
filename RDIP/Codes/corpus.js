@@ -12,7 +12,6 @@ var correct_sent1=[["John ate an apple before afternoon","before afternoon John 
 ["I told her that I bought a book yesterday","I told her yesterday that I bought a book","yesterday I told her that I bought a book","I bought a book that I told her yesterday","I bought a book yesterday that I told her"	,"yesterday I bought a book that I told her"]]
 
 
-
 //declaring and initializing the hindi sentences 
 var hinsentences=["राम और श्याम बाजार गयें","राम सोया और श्याम भी","मैंने उसे बताया कि राम सो रहा है","राम खाकर सोया","बिल्लियों को मारकर कुत्ता सो गया"	,"एक लाल किताब वहाँ है","एक बड़ी सी किताब वहाँ है	"]
 var correct_sent2=[["राम और श्याम बाजार गयें","राम और श्याम गयें बाजार","बाजार गयें राम और श्याम","गयें बाजार राम और श्याम"],
@@ -74,6 +73,7 @@ function language()//performs the actions based on the language that has choosen
 		document.getElementById("result2").innerHTML=""
 		return;
 	}
+
 
 
 	let body = document.getElementsByTagName("p")[3];
