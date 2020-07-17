@@ -9,180 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="corpus.js"></script>
-<style>
-body
-  {
-    max-width:1030px;
-    max-height:1000px;
-    margin:auto;
-    background-color: #1D3559;
-	position:relative;
-  }
-
-.h4
-{
-  font-size: 60px;
-  font-family: italic;
-  background-color:#CCEEEE;
-  height: 1000px;
-  text-align: left;
-  padding-left:5px;
-  position:relative;
-}
-.h4 p
-{
-  padding-left:25px;
-  padding-top:2px;
-  position:relative;
-}
-
-.navbar2 ul 
-{
-  list-style: none;
-}
-.navbar2 li
-{
-  display: inline;
-}
-.navbar2 a
-{
-padding:14px 16px;
-font-size: 15px;
-color: #00688B   ;
-text-decoration: underline;
-}
-.navbar2 a:hover
-{
-color:white;
- background: #104E8B   ;
- text-decoration: underline;
-}
-.navbar2
-{
-    background-color: white;
-    height:1200px;
-    font-family: sans-serif;
-    margin:30px;
-    box-shadow: 0px 20px 25px 5px   lightslategray;
-
-}
-#experiment h4
-{
-padding-left:60px;
-padding-top: 44px;
-padding-bottom: 10px
-}
-#experiment select
-{
-  font-size:15px;
-    }
-#result
-{
-   font-size:18px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-     line-height: 0.1;
-     color:#0000CD;
-     font-weight: bolder;
-
-}
-#result1
-{
-   font-size:16px;
-     line-height: 0.1;
-     color:blue;
-	 font-style:oblique;
-     font-weight: lighter;
-	 padding-bottom: 10px;
-	 position:relative;
-     top: 10px;
-
-}
-#result2
-{
-   font-size:16px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-     line-height: 0.1;
-     color:#0000FF;
-     font-weight: bolder;
-	 position:relative;
-     top: 20px;
-
-}
-#result3
-{
-   font-size:16px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-     line-height: 0.1;
-     color:blue;
-     font-weight: bolder;
-     padding-bottom: 10px;
-	 position:relative;
-     top: 20px;
-}
-#result4
-{
-   font-size:16px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-     line-height: 0.1;
-     color:black;
-     font-weight: bolder;
-     padding-bottom: 10px;
-	 position:relative;
-     top: 20px;
-}
-
-button {
-  width: 90px;
-  height: 30px;
-  margin: 2px;
-
-}
-
- #b3
-{
-  width: 190px;
-  height: 25px;
- font-size:15px;
-  margin: 10px;
-  	 
-
-}
-#b4
-{
-  width: 290px;
-  height: 25px;
- font-size:15px;
-  margin: 10px;
-  position:relative;
-     top: -20px;
-  
-}
-#result5
-{
-   font-size:16px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-     line-height: 0.1;
-     color:#0000FF;
-     font-weight: bolder;
-	 
-}
- #b5
-{
-  width: 200px;
-  height: 25px;
- font-size:15px;
-  margin: 10px;
-  
-}
-#result6
-{
-width: 500px;
-  height: 25px;
- font-size:15px;
- margin: 10px;
-  
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
   <center>
@@ -201,18 +28,18 @@ width: 500px;
          <option value="Hindi" id="Hindi" >Hindi</option>
 		 </select><br><br>
 		 
-   <p id="result"></p>
+   <p id="result" ></p>
    
    <p id="result1" ></p>
-   <p id="result2"></p>
-   <p id="result3"></p>
-    <p id="result4"></p>
+   <p id="result2" ></p>
+   <p id="result3" ></p>
+   <p id="result4" ></p>
    <button id="b3" style="visibility: hidden" onclick="reform()">Re-form the sentence</button><br>
    
    <button id="b4" style="visibility: hidden" onclick="check()">Check the correctness of this sentence</button><br>
-   <p id="result5"></p> 
+   <p id="result5" ></p> 
    <button id="b5" style="visibility: hidden" onclick="toggle()">Get Correct Sentence</button>
-   <p id="result6"></p>
+   <p id="result6" ></p>
    
  </center>
       </section>
