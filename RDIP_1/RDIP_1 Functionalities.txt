@@ -1,0 +1,12 @@
+
+UNIT-4 Functionalities:-
+
+
+This experiment is mainly about finding the number of "tokens" and "types" for the selected corpus.
+If you want another corpus paragraph their is a drop down menu which allows you to select.
+Inorder to find the number of words(tokens) their is a function.
+Similarly to find the number of unique word(type) their is a separate function.
+After pressing the submit button the function call taking place.
+Then it validates the input that have choosen with the total number of tokens and type present.
+If the choosen answer was correct then it display "Right answer" then after further functions get invoked.
+If the choosen answer was wrong then it just displays as "Wrong answer".
